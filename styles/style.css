@@ -1,0 +1,443 @@
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+.page {
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0 auto;
+  font-family: var(--font-text, monospace);
+  font-size: var(--font-size);
+  font-weight: 400;
+  line-height: 23.4px;
+}
+
+/* header */
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;;
+  position: relative;
+  padding: 20px;
+  min-block-size: 100vh;
+}
+
+.header__title {
+  color: var(--title-color);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-weight: 700;
+  line-height: 82.5%;
+  margin-left: -20px;
+}
+
+.title-decoration {
+  font-weight: 700;
+  background-color: var(--accent-color);
+  font-size: var(--font-size);
+  line-height: 23.4px;
+  color: var(--subtitle-text-color);
+}
+
+.header__text {
+  max-block-size: 71px;
+  max-inline-size: 491px;
+  justify-self: end;
+  align-self: center;
+}
+
+.decorative__title-text {
+  color: var(--subtitle-text-color);
+  background-color: var(--accent-color);
+  line-height: 23.4px;
+  font-size: var(--font-size);
+  font-weight: 700;
+}
+
+/* Оформление секций */
+
+.question__section-title {
+  font-size: var(--font-size);
+  line-height: 23.4px;
+  font-weight: bold;
+  color: var(--button-color);
+}
+
+.question__section-answer-text {
+  color: var(--text-color);
+  font-size: var(--font-size);
+}
+
+/* Секция why-focus-hard */
+
+.question__section_why-focus-hard {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding-block-start: 60px;
+  margin: 0 20px;
+}
+
+.question__section_why-focus-hard_answer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.question__section_why-focus-hard_answer p:first-of-type {
+  padding-block-end: 10px;
+}
+
+.question__section-answer-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.question__section-answer-link:focus {
+  outline: none;
+}
+
+.question__section-answer-link::focus-visible {
+  border: 1px solid var(--text-color);
+}
+
+.question__section-answer-link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.question__section-focus-reduces {
+  margin: 0 20px;
+}
+
+.question__section-focus-reduces-title {
+  max-inline-size: 315px;
+}
+
+.question__section-focus-reduces-answer {
+  margin-block-end: 10px;
+}
+
+.question__section-focus-reduces-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-block-start: 20px;
+  gap: 20px;
+}
+
+/* Секция how-to-focus */
+
+.question__section-how-to-focus {
+  display: grid;
+  grid-template-columns: 34% 66%;
+  padding-block-end: 80px;
+  margin: 0 20px;
+}
+
+.question__section-answer-subtitle {
+  font-weight: 400;
+}
+
+.question__section-how-to-focus-answer {
+  display: grid;
+  gap: 20px;
+}
+
+.question__section-how-to-focus-answer-text {
+  padding-block-start: 10px;
+}
+
+ /* Секция focus-galary */
+
+.question__section-focus-galary {
+  padding-block-end: 60px;
+}
+
+.question__section-focus-galary-title {
+  margin: 0 20px 20px 20px;
+}
+
+.question__section-focus-galary-container {
+  display: grid;
+  grid-template-areas: inherit;
+  margin: 0 20px;
+  gap: 20px;
+}
+
+.question__section__focus-galary-item {
+  block-size: 100%;
+  inline-size: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
+.question__section__focus-galary-item:first-of-type {
+  grid-column: 1 / 3;
+}
+
+.question__section__focus-galary-item:nth-of-type(2) {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+
+.question__section__focus-galary-item:nth-of-type(3) {
+  grid-row: 2 / 4;
+}
+
+.question__section__focus-galary-item:nth-of-type(4) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.question__section__focus-galary-item:last-of-type {
+  grid-column: 2 / 4;
+}
+
+
+ /* Навигация */
+
+.header__theme-menu-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  color: var(--button-color);
+  border: none;
+  background: transparent;
+  text-align: center;
+  padding: 0 13px;
+}
+
+/* действия при навигации */
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--button-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: 1px solid var(--button-color);
+}
+
+.header__theme-menu-button:focus {
+  text-decoration: underline;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid rgba(255, 0, 112, 0.40);
+  cursor: pointer;
+}
+
+/* кнопка запись */
+
+.record-point {
+  content: "";
+  color: var(--accent-color);
+  display: flex;
+  top: 0;
+  right: 0;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  position: absolute;
+  padding-right: 8px;
+  text-transform: uppercase;
+  margin: 20px;
+}
+
+.record-point::after {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  fill: var(--accent-color);
+  filter: drop-shadow(0px 0px 4px var(--accent-color));
+}
+
+/* Декоративные углы */
+
+.frame-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 1px solid var(--button-color);
+  border-right: 1px solid var(--button-color);
+  width: 25px;
+  height: 25px;
+  margin: 20px;
+}
+
+.frame-box::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: 1px solid var(--button-color);
+  border-left: 1px solid var(--button-color);
+  width: 25px;
+  height: 25px;
+  margin: 20px;
+}
+
+.footer {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 100vh;
+  padding: 20px;
+}
+
+.footer__title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+/* Медиа запросы */
+
+/* Медиа запрос для 768px; */
+
+@media (width <= 768px) {
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__text {
+    max-inline-size: 364px;
+    max-block-size: 117px;
+  }
+
+  .header__theme-menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 13px;
+  }
+
+  .question__section_why-focus-hard {
+    grid-template-columns: 33% 67%;
+    gap: 20px;
+    padding-inline-end: 20px;
+  }
+
+  .question__section-focus-reduces-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block-start: 20px;
+  }
+
+  .question__section-focus-reduces-title {
+    max-inline-size: 236px;
+  }
+
+  .question__section-how-to-focus {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    padding-block-end: 80px;
+  }
+
+  .footer {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (width <= 560px) {
+
+  .header {
+    padding: 10px;
+  }
+
+  .header__text {
+    max-block-size: 117px;
+    min-inline-size: 355px;
+  }
+
+  .header__title {
+    margin-left: 0;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+
+  .question__section_why-focus-hard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 0 0 0;
+    margin: 0 10px;
+  }
+
+  .question__section-focus-reduces {
+    padding-block-start: 50px;
+    padding-block-end: 50px;
+    padding-inline-end: 0;
+    margin: 0 10px;
+  }
+
+  .question__section-focus-reduces-title {
+    min-inline-size: 355px;
+  }
+
+  .question__section-focus-reduces-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .question__section-how-to-focus {
+    display: flex;
+    flex-direction: column;
+    padding-block-end: 50px;
+    gap: 20px;
+    margin: 0 10px;
+  }
+
+  .question__section-focus-galary {
+    padding: 0 0 40px 0;
+  }
+
+  .question__section-focus-galary-title {
+    margin: 0 10px 10px 10px;
+  }
+
+  .question__section-focus-galary-container {
+    display: flex;
+    margin: 0 10px;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .footer {display: flex;
+  justify-content: center;
+  padding: 10px; 
+  }
+
+  .footer__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+
+  .record-point {
+    margin: 10px;
+  }
+
+  .frame::before {
+    margin: 10px;
+  }
+  
+  .frame::after {
+    block-size: 25px;
+    margin: 10px;
+  }
+
+}
