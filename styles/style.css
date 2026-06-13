@@ -1,4 +1,3 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
   background-image: var(--background-image);
@@ -20,6 +19,7 @@
   position: relative;
   padding: 20px;
   min-block-size: 100vh;
+  min-height: 768px;
 }
 
 .header__title {
@@ -40,7 +40,6 @@
 }
 
 .header__text {
-  max-block-size: 71px;
   max-inline-size: 491px;
   justify-self: end;
   align-self: center;
@@ -60,63 +59,71 @@
   font-size: var(--font-size);
   line-height: 23.4px;
   font-weight: bold;
+  padding: 0 5px;
   color: var(--button-color);
 }
 
-.question__section-answer-text {
+.section__answer-text {
   color: var(--text-color);
   font-size: var(--font-size);
+  padding: 0 5px;
+}
+
+.section__answer-title {
+  padding: 0 5px;
 }
 
 /* Секция why-focus-hard */
 
-.question__section_why-focus-hard {
+.section__why {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding-block-start: 60px;
   margin: 0 20px;
 }
 
-.question__section_why-focus-hard_answer {
+.section__why_answer {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.question__section_why-focus-hard_answer p:first-of-type {
+.section__why_answer p:first-of-type {
   padding-block-end: 10px;
 }
 
-.question__section-answer-link {
+.answer__link {
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.question__section-answer-link:focus {
+.answer__link:focus {
   outline: none;
 }
 
-.question__section-answer-link::focus-visible {
+.answer__link:focus-visible {
   border: 1px solid var(--text-color);
 }
 
-.question__section-answer-link:hover {
+.answer__link:hover {
   border-bottom: 1px solid var(--text-color);
 }
 
-.question__section-focus-reduces {
-  margin: 0 20px;
+.section__what {
+  margin: 80px 20px 20px;
 }
 
-.question__section-focus-reduces-title {
+.section__what-title {
   max-inline-size: 315px;
 }
 
-.question__section-focus-reduces-answer {
-  margin-block-end: 10px;
+.section__what-answer {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
 }
 
-.question__section-focus-reduces-container {
+.section__what-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding-block-start: 20px;
@@ -125,69 +132,70 @@
 
 /* Секция how-to-focus */
 
-.question__section-how-to-focus {
-  display: grid;
-  grid-template-columns: 34% 66%;
-  padding-block-end: 80px;
-  margin: 0 20px;
+.section__how {
+    display: grid;
+    grid-template-columns: 34% 66%;
+    padding-block-end: 60px;
+    margin: 58px 20px 20px;
 }
 
-.question__section-answer-subtitle {
+.section__subtitle {
   font-weight: 400;
+  padding: 0 5px;
 }
 
-.question__section-how-to-focus-answer {
+.section__how-answer {
   display: grid;
   gap: 20px;
 }
 
-.question__section-how-to-focus-answer-text {
+.section__how-answer-text {
   padding-block-start: 10px;
 }
 
  /* Секция focus-galary */
 
-.question__section-focus-galary {
+.section__gallery {
   padding-block-end: 60px;
 }
 
-.question__section-focus-galary-title {
+.section__gallery-title {
   margin: 0 20px 20px 20px;
 }
 
-.question__section-focus-galary-container {
+.section__gallery-container {
   display: grid;
   grid-template-areas: inherit;
   margin: 0 20px;
   gap: 20px;
 }
 
-.question__section__focus-galary-item {
+.section__gallery-item {
   block-size: 100%;
   inline-size: 100%;
   object-position: center;
   object-fit: cover;
 }
 
-.question__section__focus-galary-item:first-of-type {
+.section__gallery-item:first-of-type {
   grid-column: 1 / 3;
 }
 
-.question__section__focus-galary-item:nth-of-type(2) {
+.section__gallery-item:nth-of-type(2) {
   grid-column: 3 / 4;
   grid-row: 1 / 3;
 }
 
-.question__section__focus-galary-item:nth-of-type(3) {
+.section__gallery-item:nth-of-type(3) {
   grid-row: 2 / 4;
 }
 
-.question__section__focus-galary-item:nth-of-type(4) {
+.section__gallery-item:nth-of-type(4) {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
 
-.question__section__focus-galary-item:last-of-type {
+.section__gallery-item:last-of-type {
   grid-column: 2 / 4;
 }
 
@@ -216,11 +224,11 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  outline: 1px solid var(--button-color);
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .header__theme-menu-button:focus {
-  text-decoration: underline;
+  outline: none;
 }
 
 .header__theme-menu-button:hover {
@@ -253,7 +261,7 @@
   background-color: var(--accent-color);
   border-radius: 50%;
   fill: var(--accent-color);
-  filter: drop-shadow(0px 0px 4px var(--accent-color));
+  filter: drop-shadow(0px 0px 4px 2px var(--accent-color));
 }
 
 /* Декоративные углы */
@@ -288,13 +296,14 @@
   align-items: center;
   justify-content: center;
   min-block-size: 100vh;
+  min-height: 768px;
   padding: 20px;
 }
 
 .footer__title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
   font-weight: 700;
   line-height: 82.5%;
 }
@@ -304,8 +313,10 @@
 /* Медиа запрос для 768px; */
 
 @media (width <= 768px) {
-  .header__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+
+  .header {
+    min-height: 1024px;
+    padding: 20px;
   }
 
   .header__text {
@@ -325,40 +336,62 @@
     gap: 13px;
   }
 
-  .question__section_why-focus-hard {
+  .section__answer-text {
+    padding: 0;
+  }
+
+  .question__section-title {
+    padding: 0;
+  }
+
+  .section__why {
     grid-template-columns: 33% 67%;
     gap: 20px;
     padding-inline-end: 20px;
   }
 
-  .question__section-focus-reduces-container {
+  .section__what-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding-block-start: 20px;
   }
 
-  .question__section-focus-reduces-title {
+  .section__what-title {
     max-inline-size: 236px;
   }
 
-  .question__section-how-to-focus {
-    display: grid;
-    grid-template-columns: 35% 65%;
-    padding-block-end: 80px;
+  .section__how-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
+
+  .section__how {
+    margin-top: 80px;
+  }
+
+  .section__gallery {
+    padding: 45px 0 60px;
+}
 
   .footer {
     padding: 20px;
     display: flex;
     justify-content: center;
+    min-height: 1024px;
   }
 }
 
-@media (width <= 560px) {
+@media (width <= 375px) {
 
   .header {
     padding: 10px;
+    min-height: 668px;
+  }
+
+  .header__title {
+    padding-left: 15px;
   }
 
   .header__text {
@@ -366,12 +399,7 @@
     min-inline-size: 355px;
   }
 
-  .header__title {
-    margin-left: 0;
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  }
-
-  .question__section_why-focus-hard {
+  .section__why {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -379,23 +407,23 @@
     margin: 0 10px;
   }
 
-  .question__section-focus-reduces {
+  .section__what {
     padding-block-start: 50px;
     padding-block-end: 50px;
     padding-inline-end: 0;
     margin: 0 10px;
   }
 
-  .question__section-focus-reduces-title {
+  .section__what-title {
     min-inline-size: 355px;
   }
 
-  .question__section-focus-reduces-container {
+  .section__what-container {
     display: flex;
     flex-direction: column;
   }
 
-  .question__section-how-to-focus {
+  .section__how {
     display: flex;
     flex-direction: column;
     padding-block-end: 50px;
@@ -403,39 +431,37 @@
     margin: 0 10px;
   }
 
-  .question__section-focus-galary {
+  .section__gallery {
     padding: 0 0 40px 0;
   }
 
-  .question__section-focus-galary-title {
+  .section__gallery-title {
     margin: 0 10px 10px 10px;
   }
 
-  .question__section-focus-galary-container {
+  .section__gallery-container {
     display: flex;
     margin: 0 10px;
     gap: 10px;
     flex-direction: column;
   }
 
-  .footer {display: flex;
-  justify-content: center;
-  padding: 10px; 
-  }
-
-  .footer__title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  .footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px; 
+    min-height: 668px;
   }
 
   .record-point {
     margin: 10px;
   }
 
-  .frame::before {
+  .frame-box::before {
     margin: 10px;
   }
   
-  .frame::after {
+  .frame-box::after {
     block-size: 25px;
     margin: 10px;
   }

@@ -5,13 +5,13 @@
   --subtitle-text-color: #000028;
   --accent-color: #ff0070;
   --button-color:#ff0070;
-  --backgroung-image: url(../images/cover-image-dark.png);
+  --background-image: url(../images/cover-image-dark.png);
 }
 
-.theme_dark .record-point {
+.theme-dark .record-point {
   display: flex;
 }
 
-.theme_dark .header__theme-menu-button:hover {
+.theme-dark .header__theme-menu-button:hover {
   border: 1px solid rgba(255, 0, 112, 0.40);
 }
