@@ -1,6 +1,7 @@
 
 .page {
   background-image: var(--background-image);
+  background-color: var(--background-color);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -11,6 +12,7 @@
   line-height: 23.4px;
 }
 
+
 /* header */
 
 .header {
@@ -18,8 +20,8 @@
   grid-template-rows: 1fr min-content 1fr;;
   position: relative;
   padding: 20px;
-  min-block-size: 100vh;
-  min-height: 768px;
+  block-size: 100vh;
+  min-block-size: 768px;
 }
 
 .header__title {
@@ -29,14 +31,6 @@
   font-weight: 700;
   line-height: 82.5%;
   margin-left: -20px;
-}
-
-.title-decoration {
-  font-weight: 700;
-  background-color: var(--accent-color);
-  font-size: var(--font-size);
-  line-height: 23.4px;
-  color: var(--subtitle-text-color);
 }
 
 .header__text {
@@ -55,41 +49,33 @@
 
 /* Оформление секций */
 
-.question__section-title {
+.section__title {
+  font-weight: 700;
+  background-color: var(--accent-color);
+  font-size: var(--font-size);
+  line-height: 23.4px;
+  color: var(--subtitle-text-color);
+}
+
+.question__title {
   font-size: var(--font-size);
   line-height: 23.4px;
   font-weight: bold;
-  padding: 0 5px;
   color: var(--button-color);
+  max-inline-size: 315px;
 }
 
-.section__answer-text {
+.section__text {
   color: var(--text-color);
   font-size: var(--font-size);
-  padding: 0 5px;
 }
 
-.section__answer-title {
-  padding: 0 5px;
+.section__container-how .section__text {
+  padding-block-start: 10px;
 }
 
-/* Секция why-focus-hard */
-
-.section__why {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding-block-start: 60px;
-  margin: 0 20px;
-}
-
-.section__why_answer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.section__why_answer p:first-of-type {
-  padding-block-end: 10px;
+.low-font-weight {
+  font-weight: 400;
 }
 
 .answer__link {
@@ -109,51 +95,65 @@
   border-bottom: 1px solid var(--text-color);
 }
 
+/* Секция Почему? */
+
+.section__why {
+  display: grid;
+  grid-template-columns: 34% 66%;
+  padding-block-start: 60px;
+  margin: 0 20px;
+}
+
+.article__answer-why {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.article__answer-why p:first-of-type {
+  padding-block-end: 10px;
+}
+
+ /* Секция Что? */
+
 .section__what {
-  margin: 80px 20px 20px;
+  padding-block-start: 80px;
+  padding-block-end: 70px;
+  margin: 0 20px;
 }
 
-.section__what-title {
-  max-inline-size: 315px;
+.article__answer-what {
+  display: grid;
+  gap: 10px;
+  align-content: start;
 }
 
-.section__what-answer {
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
+.article__answer-what p:first-of-type {
+  padding-block-end: 10px;
 }
 
-.section__what-container {
+.section__container-what {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-block-start: 20px;
   gap: 20px;
+  padding-block-start: 20px;
 }
 
-/* Секция how-to-focus */
+/* Секция Как? */
 
 .section__how {
-    display: grid;
-    grid-template-columns: 34% 66%;
-    padding-block-end: 60px;
-    margin: 58px 20px 20px;
+  display: grid;
+  grid-template-columns: 34% 66%;
+  padding-block-end: 80px;
+  margin: 0 20px;
 }
 
-.section__subtitle {
-  font-weight: 400;
-  padding: 0 5px;
-}
-
-.section__how-answer {
+.article__answer-how {
   display: grid;
   gap: 20px;
 }
 
-.section__how-answer-text {
-  padding-block-start: 10px;
-}
-
- /* Секция focus-galary */
+ /* Секция Галерея */
 
 .section__gallery {
   padding-block-end: 60px;
@@ -199,7 +199,6 @@
   grid-column: 2 / 4;
 }
 
-
  /* Навигация */
 
 .header__theme-menu-list {
@@ -224,7 +223,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--button-color);
 }
 
 .header__theme-menu-button:focus {
@@ -232,8 +231,12 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgba(255, 0, 112, 0.40);
+  outline: 1px solid var(--button-color-hover);
   cursor: pointer;
+}
+
+.theme-dark .header__theme-menu-button:hover {
+  border: 1px solid var(--button-color-hover);
 }
 
 /* кнопка запись */
@@ -260,8 +263,7 @@
   height: 9px;
   background-color: var(--accent-color);
   border-radius: 50%;
-  fill: var(--accent-color);
-  filter: drop-shadow(0px 0px 4px 2px var(--accent-color));
+  box-shadow: 0px 0px 4px 2px var(--button-color);
 }
 
 /* Декоративные углы */
@@ -290,13 +292,15 @@
   margin: 20px;
 }
 
+/* footer */
+
 .footer {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
-  min-block-size: 100vh;
-  min-height: 768px;
+  block-size: 100vh;
+  min-block-size: 768px;
   padding: 20px;
 }
 
@@ -321,7 +325,6 @@
 
   .header__text {
     max-inline-size: 364px;
-    max-block-size: 117px;
   }
 
   .header__theme-menu {
@@ -336,44 +339,29 @@
     gap: 13px;
   }
 
-  .section__answer-text {
+  .question__title {
+    max-inline-size: 236px;
     padding: 0;
   }
 
-  .question__section-title {
-    padding: 0;
+  .article__answer-what p:first-of-type {
+    padding-block-end: 0;
   }
 
-  .section__why {
-    grid-template-columns: 33% 67%;
-    gap: 20px;
-    padding-inline-end: 20px;
+  .section__why, .section__how {
+    grid-template-columns: 35% 65%;
   }
 
-  .section__what-container {
+  .section__container-what {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding-block-start: 20px;
   }
 
-  .section__what-title {
-    max-inline-size: 236px;
-  }
-
-  .section__how-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .section__how {
-    margin-top: 80px;
+    margin-top: 10px;
   }
-
-  .section__gallery {
-    padding: 45px 0 60px;
-}
 
   .footer {
     padding: 20px;
@@ -395,7 +383,6 @@
   }
 
   .header__text {
-    max-block-size: 117px;
     min-inline-size: 355px;
   }
 
@@ -414,13 +401,8 @@
     margin: 0 10px;
   }
 
-  .section__what-title {
-    min-inline-size: 355px;
-  }
-
-  .section__what-container {
-    display: flex;
-    flex-direction: column;
+  .question__title {
+    max-inline-size: inherit;
   }
 
   .section__how {
