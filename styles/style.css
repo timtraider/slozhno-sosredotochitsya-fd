@@ -235,10 +235,6 @@
   cursor: pointer;
 }
 
-.theme-dark .header__theme-menu-button:hover {
-  border: 1px solid var(--button-color-hover);
-}
-
 /* кнопка запись */
 
 .record-point {
